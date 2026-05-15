@@ -2,43 +2,43 @@ import { baseApi } from './api';
 
 export const authApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    login: builder.mutation<any, any>({
-      query: (credentials) => ({
+    login: builder.mutation({
+      query: (credentials: any) => ({
         url: '/auth/login',
         method: 'POST',
         body: credentials,
       }),
     }),
-    signup: builder.mutation<any, FormData | any>({
-      query: (data) => ({
+    signup: builder.mutation({
+      query: (data: any) => ({
         url: '/auth/signup',
         method: 'POST',
         body: data,
       }),
     }),
-    verifyOtp: builder.mutation<any, { userId: string; otp: string }>({
-      query: (data) => ({
+    verifyOtp: builder.mutation({
+      query: (data: { userId: string; otp: string }) => ({
         url: '/auth/verify-otp',
         method: 'POST',
         body: data,
       }),
     }),
-    forgotPassword: builder.mutation<any, { email: string }>({
-      query: (data) => ({
+    forgotPassword: builder.mutation({
+      query: (data: { email: string }) => ({
         url: '/auth/forgot-password',
         method: 'POST',
         body: data,
       }),
     }),
-    resetPassword: builder.mutation<any, { userId: string; otp: string; newPassword: string }>({
-      query: (data) => ({
+    resetPassword: builder.mutation({
+      query: (data: { userId: string; otp: string; newPassword: string }) => ({
         url: '/auth/reset-password',
         method: 'POST',
         body: data,
       }),
     }),
-    resendOtp: builder.mutation<any, { userId: string }>({
-      query: (data) => ({
+    resendOtp: builder.mutation({
+      query: (data: { userId: string }) => ({
         url: '/auth/resend-otp',
         method: 'POST',
         body: data,

@@ -105,7 +105,7 @@ export function GlobalCareerDiagnostic() {
     const [showOverlay, setShowOverlay] = useState(true);
     const [initialChoice, setInitialChoice] = useState<'jobs' | 'consultation' | null>(null);
 
-    const [questions, setQuestions] = useState<any[]>(QUESTIONS);
+    const [questions] = useState<any[]>(QUESTIONS);
 
     useEffect(() => {
         // Backend returns incorrect quizzes and is unresponsive, so we rely on the hardcoded QUESTIONS constant.

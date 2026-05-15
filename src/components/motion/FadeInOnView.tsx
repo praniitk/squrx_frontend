@@ -1,7 +1,11 @@
+import { type ReactNode, type Key } from 'react';
 import { motion, type HTMLMotionProps } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 export interface FadeInOnViewProps extends HTMLMotionProps<"div"> {
+    children?: ReactNode;
+    className?: string;
+    key?: Key;
     delay?: number;
     direction?: 'up' | 'down' | 'left' | 'right' | 'none';
     distance?: number;

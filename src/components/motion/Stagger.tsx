@@ -1,6 +1,10 @@
+import { type ReactNode, type Key } from 'react';
 import { motion, type HTMLMotionProps } from 'framer-motion';
 
 export interface StaggerContainerProps extends HTMLMotionProps<"div"> {
+    children?: ReactNode;
+    className?: string;
+    key?: Key;
     staggerDelay?: number;
     delayChildren?: number;
 }
@@ -35,6 +39,9 @@ export function StaggerContainer({
 }
 
 export interface StaggerItemProps extends HTMLMotionProps<"div"> {
+    children?: ReactNode;
+    className?: string;
+    key?: Key;
     yOffest?: number;
 }
 
