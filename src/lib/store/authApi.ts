@@ -44,6 +44,55 @@ export const authApi = baseApi.injectEndpoints({
         body: data,
       }),
     }),
+    getCountries: builder.query({
+      query: (params: { search?: string } | void) => ({
+        url: '/countries',
+        method: 'GET',
+        params: params || {},
+      }),
+    }),
+    getEducations: builder.query({
+      query: (params: { search?: string } | void) => ({
+        url: '/educations',
+        method: 'GET',
+        params: params || {},
+      }),
+    }),
+    getSkills: builder.query({
+      query: (params: { search?: string } | void) => ({
+        url: '/skills',
+        method: 'GET',
+        params: params || {},
+      }),
+    }),
+    getJobTypes: builder.query({
+      query: (params: { search?: string } | void) => ({
+        url: '/job-types',
+        method: 'GET',
+        params: params || {},
+      }),
+    }),
+    getExperienceLevels: builder.query({
+      query: (params: { search?: string } | void) => ({
+        url: '/experience-levels',
+        method: 'GET',
+        params: params || {},
+      }),
+    }),
+    getLocations: builder.query({
+      query: (params: { search?: string } | void) => ({
+        url: '/locations',
+        method: 'GET',
+        params: params || {},
+      }),
+    }),
+    getDomains: builder.query({
+      query: (params: { search?: string } | void) => ({
+        url: '/domains',
+        method: 'GET',
+        params: params || {},
+      }),
+    }),
   }),
 });
 
@@ -53,5 +102,12 @@ export const {
   useVerifyOtpMutation, 
   useForgotPasswordMutation, 
   useResetPasswordMutation,
-  useResendOtpMutation 
+  useResendOtpMutation,
+  useGetCountriesQuery,
+  useGetEducationsQuery,
+  useGetSkillsQuery,
+  useGetJobTypesQuery,
+  useGetExperienceLevelsQuery,
+  useGetLocationsQuery,
+  useGetDomainsQuery,
 } = authApi;
