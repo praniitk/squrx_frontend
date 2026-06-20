@@ -2,92 +2,92 @@ import { baseApi } from './api';
 
 export const authApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    login: builder.mutation({
-      query: (credentials: any) => ({
+    login: builder.mutation<any, any>({
+      query: (credentials) => ({
         url: '/auth/login',
         method: 'POST',
         body: credentials,
       }),
     }),
-    signup: builder.mutation({
-      query: (data: any) => ({
+    signup: builder.mutation<any, FormData | any>({
+      query: (data) => ({
         url: '/auth/signup',
         method: 'POST',
         body: data,
       }),
     }),
-    verifyOtp: builder.mutation({
-      query: (data: { userId: string; otp: string }) => ({
+    verifyOtp: builder.mutation<any, { userId: string; otp: string }>({
+      query: (data) => ({
         url: '/auth/verify-otp',
         method: 'POST',
         body: data,
       }),
     }),
-    forgotPassword: builder.mutation({
-      query: (data: { email: string }) => ({
+    forgotPassword: builder.mutation<any, { email: string }>({
+      query: (data) => ({
         url: '/auth/forgot-password',
         method: 'POST',
         body: data,
       }),
     }),
-    resetPassword: builder.mutation({
-      query: (data: { userId: string; otp: string; newPassword: string }) => ({
+    resetPassword: builder.mutation<any, { userId: string; otp: string; newPassword: string }>({
+      query: (data) => ({
         url: '/auth/reset-password',
         method: 'POST',
         body: data,
       }),
     }),
-    resendOtp: builder.mutation({
-      query: (data: { userId: string }) => ({
+    resendOtp: builder.mutation<any, { userId: string }>({
+      query: (data) => ({
         url: '/auth/resend-otp',
         method: 'POST',
         body: data,
       }),
     }),
-    getCountries: builder.query({
-      query: (params: { search?: string } | void) => ({
+    getCountries: builder.query<any, { search?: string } | void>({
+      query: (params) => ({
         url: '/countries',
         method: 'GET',
         params: params || {},
       }),
     }),
-    getEducations: builder.query({
-      query: (params: { search?: string } | void) => ({
+    getEducations: builder.query<any, { search?: string } | void>({
+      query: (params) => ({
         url: '/educations',
         method: 'GET',
         params: params || {},
       }),
     }),
-    getSkills: builder.query({
-      query: (params: { search?: string } | void) => ({
+    getSkills: builder.query<any, { search?: string } | void>({
+      query: (params) => ({
         url: '/skills',
         method: 'GET',
         params: params || {},
       }),
     }),
-    getJobTypes: builder.query({
-      query: (params: { search?: string } | void) => ({
+    getJobTypes: builder.query<any, { search?: string } | void>({
+      query: (params) => ({
         url: '/job-types',
         method: 'GET',
         params: params || {},
       }),
     }),
-    getExperienceLevels: builder.query({
-      query: (params: { search?: string } | void) => ({
+    getExperienceLevels: builder.query<any, { search?: string } | void>({
+      query: (params) => ({
         url: '/experience-levels',
         method: 'GET',
         params: params || {},
       }),
     }),
-    getLocations: builder.query({
-      query: (params: { search?: string } | void) => ({
+    getLocations: builder.query<any, { search?: string } | void>({
+      query: (params) => ({
         url: '/locations',
         method: 'GET',
         params: params || {},
       }),
     }),
-    getDomains: builder.query({
-      query: (params: { search?: string } | void) => ({
+    getDomains: builder.query<any, { search?: string } | void>({
+      query: (params) => ({
         url: '/domains',
         method: 'GET',
         params: params || {},
